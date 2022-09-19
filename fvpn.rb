@@ -5,22 +5,22 @@
 class Fvpn < Formula
   desc "Forest VPN CLI client for macOS, Linux, and Windows"
   homepage "https://github.com/forestvpn/cli"
-  version "0.2.0-rc.4-debug.1"
+  version "0.2.0-rc.4-debug.2"
 
   depends_on "wireguard-tools"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-rc.4-debug.1/fvpn_darwin_arm64.tar.gz"
-      sha256 "39b77d621515dc0f71782c3a9a240ab0378f7c562d1a4a43342b616ad95432d4"
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-rc.4-debug.2/fvpn_darwin_arm64.tar.gz"
+      sha256 "fe15b895f632834f3e22537da91af07a2934d99fa20b32425a10437ce0863b1e"
 
       def install
         bin.install "fvpn"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-rc.4-debug.1/fvpn_darwin_amd64.tar.gz"
-      sha256 "7deb2256044089d1eef511cb65b388a42e4ab56a7eeb8d96299b88cd79027064"
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-rc.4-debug.2/fvpn_darwin_amd64.tar.gz"
+      sha256 "a4db0e74958f7da9383c070327498faeaab24be5f3e2b9ee156b330995ea34b3"
 
       def install
         bin.install "fvpn"
@@ -30,16 +30,16 @@ class Fvpn < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-rc.4-debug.1/fvpn_linux_arm64.tar.gz"
-      sha256 "580988ba813b76d6644fd1bd771e668e86f7f79cbc6e2082459d5ad4921b9032"
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-rc.4-debug.2/fvpn_linux_arm64.tar.gz"
+      sha256 "12ecccc49eee3fd7a76e9b1fb47b83d1abb0ee9b975f3417bff460b3cdb7f8da"
 
       def install
         bin.install "fvpn"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-rc.4-debug.1/fvpn_linux_amd64.tar.gz"
-      sha256 "d615ce9245e539c1661273b7f10971341e555fc884cb7ff0efc773ab78a6b88a"
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-rc.4-debug.2/fvpn_linux_amd64.tar.gz"
+      sha256 "037e414b50938cf771c9a0dadfd39d3f11f209c4cf3039541b871aa4bb008649"
 
       def install
         bin.install "fvpn"
