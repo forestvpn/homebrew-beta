@@ -5,22 +5,22 @@
 class Fvpn < Formula
   desc "Forest VPN CLI client for macOS, Linux, and Windows"
   homepage "https://github.com/forestvpn/cli"
-  version "0.2.0-beta.32"
+  version "0.2.0-beta.33"
 
   depends_on "wireguard-tools"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-beta.32/fvpn_darwin_arm64.tar.gz"
-      sha256 "865a2579de717dfe2cfbd0264563af4ec02774b5ab016ae20c51b755c8a2c7e3"
+    if Hardware::CPU.intel?
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-beta.33/fvpn_darwin_amd64.tar.gz"
+      sha256 "b8986cf78f284a25b5e3b88187c94c9438059a7dd96da652fad34edd5b5c755f"
 
       def install
         bin.install "fvpn"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-beta.32/fvpn_darwin_amd64.tar.gz"
-      sha256 "441ed5f4385981c3476169a41f460672b6e464541e8e179159c4fc1004d301f4"
+    if Hardware::CPU.arm?
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-beta.33/fvpn_darwin_arm64.tar.gz"
+      sha256 "9af243ed644733c0277f1fc88b0d970b564d41c075beb3df5095f54bc62acf94"
 
       def install
         bin.install "fvpn"
@@ -29,17 +29,17 @@ class Fvpn < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-beta.32/fvpn_linux_amd64.tar.gz"
-      sha256 "0619fd9112b7cdeb59f2452ecc8d083172d18d045521e350401c1055b8dae7e4"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-beta.33/fvpn_linux_arm64.tar.gz"
+      sha256 "adf782b0fafe54b43c68a3320c01bd81dfdbb040625fcca5db5e12448bde3eeb"
 
       def install
         bin.install "fvpn"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-beta.32/fvpn_linux_arm64.tar.gz"
-      sha256 "47c4e5ac28076e16bea9c4bfb17d6eb104521b4966a4300c3d337cf83a654a10"
+    if Hardware::CPU.intel?
+      url "https://github.com/forestvpn/cli/releases/download/v0.2.0-beta.33/fvpn_linux_amd64.tar.gz"
+      sha256 "56cb7d2db42290ecc4c27bc0c90f94158dac2e2a347388d0dd4be8be462a859f"
 
       def install
         bin.install "fvpn"
